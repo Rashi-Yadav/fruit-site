@@ -1,3 +1,4 @@
+descriptionToAdd();
 showDescription();
 editButton();
 
@@ -92,4 +93,13 @@ function showDescription() {
     const placefor_para = fruitItems[i].lastElementChild;
     fruitItems[i].insertBefore(para, placefor_para);
   }
+}
+
+// Add input element inside form, to take fruit description
+function descriptionToAdd() {
+  const form = document.querySelector('form');
+  const newInput = document.createElement('input');
+  newInput.id = 'desc-to-add';
+  const placeFor_newInput = form.lastElementChild;
+  form.insertBefore(newInput, placeFor_newInput);
 }
