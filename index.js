@@ -1,4 +1,4 @@
-
+showDescription();
 editButton();
 
 //Add fruit in list, for that add eventListener to the form
@@ -73,3 +73,23 @@ function editButton() {
   }
 }
 
+// Show the fruit description in italics, after fruit name
+function showDescription() {
+  const fruitItems = document.getElementsByClassName('fruit');
+  const fruitDesc = [
+    'Banana is long in length',
+    'Apple is too costly',
+    'Orange is one of the most popular fruits',
+    'Kiwi is best for increasing blood count',
+  ];
+  for (let i = 0; i < fruitItems.length; i++) {
+    const para = document.createElement('p');
+    para.setAttribute('style', 'font-style:italic');
+    para.setAttribute('class', 'fruit-desc');
+    const textFor_para = document.createTextNode(fruitDesc[i]);
+    para.appendChild(textFor_para);
+
+    const placefor_para = fruitItems[i].lastElementChild;
+    fruitItems[i].insertBefore(para, placefor_para);
+  }
+}
